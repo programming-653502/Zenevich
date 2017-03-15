@@ -14,6 +14,7 @@ int main()
 	for (; c;)
 	{
 		c = false;
+		cout << "Введите натуральное число: ";
 		cin >> a;
 
 		for (int i = 0; i < strlen(a); i++)
@@ -26,6 +27,8 @@ int main()
 		if (!c) m = atoi(a);
 		if (m == 0) c = true;
 	}
+	
+	cout << "Результат вычислений:" << endl;
 
 	for (;;)
 	{
