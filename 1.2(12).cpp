@@ -32,7 +32,6 @@ int main()
 
 	for (;;)
 	{
-
 		t *= 2;
 		n = t - 1;
 		if (n > m) break;
