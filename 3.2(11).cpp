@@ -31,13 +31,13 @@ void menu()
 {
 	bool looper = true;
 
-	cout << "1. Èçìåíèòü ðàçìåðíîñòü.\n";
-	cout << "2. Ïåðåñòðîèòü.\n";
-	cout << "3. Ïîêàçàòü êàðòó.\n";
-	cout << "4. Íàéòè âûõîä.\n";
-	cout << "5. Àâòîð.\n";
-	cout << "0. Âûéòè.\n";
-	cout << "Âûáåðèòå ïóíêò ìåíþ: ";
+	cout << "1. Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð½Ð¾ÑÑ‚ÑŒ.\n";
+	cout << "2. ÐŸÐµÑ€ÐµÑÑ‚Ñ€Ð¾Ð¸Ñ‚ÑŒ.\n";
+	cout << "3. ÐŸÐ¾ÐºÐ°Ð·Ð°Ñ‚ÑŒ ÐºÐ°Ñ€Ñ‚Ñƒ.\n";
+	cout << "4. ÐÐ°Ð¹Ñ‚Ð¸ Ð²Ñ‹Ñ…Ð¾Ð´.\n";
+	cout << "5. ÐÐ²Ñ‚Ð¾Ñ€.\n";
+	cout << "0. Ð’Ñ‹Ð¹Ñ‚Ð¸.\n";
+	cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿ÑƒÐ½ÐºÑ‚ Ð¼ÐµÐ½ÑŽ: ";
 
 	while (looper)
 	{
@@ -49,17 +49,17 @@ void menu()
 		case '1': {resize(); rebuild(); looper = false; break; };
 		case '2': {rebuild(); looper = false; break; };
 		case '3': {map(); looper = false; break; };
-		case '4': {insert(); pathfinder(i - 1, j - 1); if (!quit) cout << "Èç çàäàíîé òî÷êè íåëüçÿ ïîêèíóòü ëàáèðèíò." << endl << "Ïåðåä ïîâòîðíûì ïîèñêîì ïåðåñòðîéòå ëàáèðèíò." << endl; looper = false; break; };
+		case '4': {insert(); pathfinder(i - 1, j - 1); if (!quit) cout << "Ð˜Ð· Ð·Ð°Ð´Ð°Ð½Ð¾Ð¹ Ñ‚Ð¾Ñ‡ÐºÐ¸ Ð½ÐµÐ»ÑŒÐ·Ñ Ð¿Ð¾ÐºÐ¸Ð½ÑƒÑ‚ÑŒ Ð»Ð°Ð±Ð¸Ñ€Ð¸Ð½Ñ‚." << endl << "ÐŸÐµÑ€ÐµÐ´ Ð¿Ð¾Ð²Ñ‚Ð¾Ñ€Ð½Ñ‹Ð¼ Ð¿Ð¾Ð¸ÑÐºÐ¾Ð¼ Ð¿ÐµÑ€ÐµÑÑ‚Ñ€Ð¾Ð¹Ñ‚Ðµ Ð»Ð°Ð±Ð¸Ñ€Ð¸Ð½Ñ‚." << endl; looper = false; break; };
 		case '5': {author(); looper = false; break; };
 		case '0': {exit(0); looper = false; break; };
-		default: {cout << "Ïîâòðèòå ââîä: "; continue; };
+		default: {cout << "ÐŸÐ¾Ð²Ñ‚Ñ€Ð¸Ñ‚Ðµ Ð²Ð²Ð¾Ð´: "; continue; };
 		};
 	}
 }
 
 void resize()
 {
-	cout << "Ââåäèòå ðàçìåðíîñòü ëàáèðèíòà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°Ð·Ð¼ÐµÑ€Ð½Ð¾ÑÑ‚ÑŒ Ð»Ð°Ð±Ð¸Ñ€Ð¸Ð½Ñ‚Ð°: ";
 	cin >> n;
 
 	labyrinth = new char*[n];
@@ -69,7 +69,7 @@ void resize()
 
 void rebuild()
 {
-	cout << "Ââåäèòå ïëîòíîñòü ëàáèðèíòà (ïðîöåíò íåïðîõîäèìûõ êëåòîê): ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð»Ð¾Ñ‚Ð½Ð¾ÑÑ‚ÑŒ Ð»Ð°Ð±Ð¸Ñ€Ð¸Ð½Ñ‚Ð° (Ð¿Ñ€Ð¾Ñ†ÐµÐ½Ñ‚ Ð½ÐµÐ¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼Ñ‹Ñ… ÐºÐ»ÐµÑ‚Ð¾Ðº): ";
 
 	int density;
 	cin >> density;
@@ -92,7 +92,7 @@ void map()
 
 void insert()
 {
-	cout << "Ââåäèòå òî÷êó íà÷àëà ïóòè (x,y): ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‚Ð¾Ñ‡ÐºÑƒ Ð½Ð°Ñ‡Ð°Ð»Ð° Ð¿ÑƒÑ‚Ð¸ (x,y): ";
 	cin >> i >> j;
 	quit = false;
 }
@@ -102,7 +102,7 @@ void pathfinder(int i, int j)
 	int overheat = 0;
 	if (labyrinth[i][j] == 'H')
 	{
-		cout << "Ïîëå íåïðîõîäèìî." <<  endl;
+		cout << "ÐŸÐ¾Ð»Ðµ Ð½ÐµÐ¿Ñ€Ð¾Ñ…Ð¾Ð´Ð¸Ð¼Ð¾." <<  endl;
 		quit = true;
 	}
 
@@ -110,7 +110,7 @@ void pathfinder(int i, int j)
 	{
 		if (i == 0 || i == n - 1 || j == 0 || j == n - 1)
 		{
-			cout << "Âûõîä åñòü. Ñìîòðèòå êàðòó." << endl;
+			cout << "Ð’Ñ‹Ñ…Ð¾Ð´ ÐµÑÑ‚ÑŒ. Ð¡Ð¼Ð¾Ñ‚Ñ€Ð¸Ñ‚Ðµ ÐºÐ°Ñ€Ñ‚Ñƒ." << endl;
 			quit = true;
 		}
 		else if (!quit && labyrinth[i + 1][j] == '.')
@@ -144,8 +144,9 @@ void pathfinder(int i, int j)
 
 void author()
 {
-	cout << "Àâòîð: Zinya the Slayer" << endl;
-	cout << "Ñòóäåíò: Çåíåâè÷ Àëåêñåé" << endl;
-	cout << "Ãðóïïà: 653502" << endl;
-	cout << "Âåðñèÿ: PreRelease 0.1" << endl;
+	cout << "ÐÐ²Ñ‚Ð¾Ñ€: Zinya the Slayer" << endl;
+	cout << "Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‚: Ð—ÐµÐ½ÐµÐ²Ð¸Ñ‡ ÐÐ»ÐµÐºÑÐµÐ¹" << endl;
+	cout << "Ð“Ñ€ÑƒÐ¿Ð¿Ð°: 653502" << endl;
+	cout << "Ð’ÐµÑ€ÑÐ¸Ñ: PreRelease 0.1" << endl;
 }
+
