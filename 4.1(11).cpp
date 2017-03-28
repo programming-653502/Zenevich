@@ -10,12 +10,12 @@ int main()
 
 	int n;
 
-	cout << "Ââåäèòå êîë-âî ñòğîê: ";
+	cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ ĞºĞ¾Ğ»-Ğ²Ğ¾ ÑÑ‚Ñ€Ğ¾Ğº: ";
 	cin >> n;
 
 	string *input = new string[n];
 
-	cout << "Ââîäèòå ñòğîêè:\n";
+	cout << "Ğ’Ğ²Ğ¾Ğ´Ğ¸Ñ‚Ğµ ÑÑ‚Ñ€Ğ¾ĞºĞ¸:\n";
 
 	for (int i = 0; i < n; i++) cin >> input[i];
 
