@@ -8,9 +8,9 @@ using namespace std;
 
 int main()
 {
-	fstream file("C:\\Users\\Алексей\\Desktop\\File 4-2(11).txt", ios::in);
+	fstream file("C:\\Users\\РђР»РµРєСЃРµР№\\Desktop\\File 4-2(11).txt", ios::in);
 
-	//на случай, если файл не найден
+	//РЅР° СЃР»СѓС‡Р°Р№, РµСЃР»Рё С„Р°Р№Р» РЅРµ РЅР°Р№РґРµРЅ
 	if (file.fail())
 	{
 		cout << "File does not exist!";
@@ -18,7 +18,7 @@ int main()
 		exit(0);
 	}
 	
-	//чтение файла
+	//С‡С‚РµРЅРёРµ С„Р°Р№Р»Р°
 	file.seekg(0, ios::end);
 
 	int file_length = file.tellg();
@@ -35,7 +35,7 @@ int main()
 
 	for (int i = 0; i < number_of_abc; i++) number_of_letters[i] = 0;
 
-	//запись вхождений символов в файле
+	//Р·Р°РїРёСЃСЊ РІС…РѕР¶РґРµРЅРёР№ СЃРёРјРІРѕР»РѕРІ РІ С„Р°Р№Р»Рµ
 	for (int i = 0; i < file_length; i++)
 	{
 		if (file_buffer[i] >= 'a' && file_buffer[i] <= 'z')
@@ -44,7 +44,7 @@ int main()
 		}
 	}
 
-	//массив гистограммы
+	//РјР°СЃСЃРёРІ РіРёСЃС‚РѕРіСЂР°РјРјС‹
 	char** histogram = new char*[100];
 	for (int i = 0; i < 100; i++)
 		histogram[i] = new char[number_of_abc];
@@ -53,7 +53,7 @@ int main()
 
 	for (char i = 0; i <number_of_abc; i++) summation_of_letters += number_of_letters[i];
 
-	//на случай, если в файле нет нужных символов
+	//РЅР° СЃР»СѓС‡Р°Р№, РµСЃР»Рё РІ С„Р°Р№Р»Рµ РЅРµС‚ РЅСѓР¶РЅС‹С… СЃРёРјРІРѕР»РѕРІ
 	if (summation_of_letters == 0)
 	{
 		cout << "There is no letters!";
@@ -61,7 +61,7 @@ int main()
 		exit(0);
 	}
 
-	//построение гистограммы
+	//РїРѕСЃС‚СЂРѕРµРЅРёРµ РіРёСЃС‚РѕРіСЂР°РјРјС‹
 	for (char i = 0; i < number_of_abc; i++)
 	{
 		int letter_percentage = (number_of_letters[i] * 100 / summation_of_letters);
@@ -73,7 +73,7 @@ int main()
 		}
 	}
 
-	//вывод гистограммы
+	//РІС‹РІРѕРґ РіРёСЃС‚РѕРіСЂР°РјРјС‹
 	for (int i = 99; i >= 0; i--)
 	{
 		for (char j = 0; j < number_of_abc; j++) cout << histogram[i][j] << " ";
@@ -85,7 +85,7 @@ int main()
 
 	cout << endl << endl;
 
-	//вывод вол-ва символов
+	//РІС‹РІРѕРґ РєРѕР»-РІР° СЃРёРјРІРѕР»РѕРІ
 	for (char i = 'a'; i <= 'z'; i++)
 		if (number_of_letters[i - 'a'] != 0)
 			cout << i << ": " << number_of_letters[i - 'a'] << endl;
